@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>SaturdayMP.NConstraints</id>
+        <version>$version$</version>
+        <title>NConstraints</title>
+        <authors>SaturdayMP</authors>
+        <owners>SaturdayMP</owners>
+        <licenseUrl>https://github.com/saturdaymp/NConstraints/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/saturdaymp/NConstraints/projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Custom constraints for NUnit.</description>
+    </metadata>
+    <files>
+		<file src="..\Source\SaturdayMP.NConstraints\bin\Debug\netstandard1.6" target="lib\netstandard1.6" />
+    </files>
+</package>
