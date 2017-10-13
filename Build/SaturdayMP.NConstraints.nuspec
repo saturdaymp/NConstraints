@@ -7,7 +7,7 @@
         <authors>SaturdayMP</authors>
         <owners>SaturdayMP</owners>
         <licenseUrl>https://github.com/saturdaymp/NConstraints/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/saturdaymp/NConstraints/projectUrl></projectUrl>
+        <projectUrl>https://github.com/saturdaymp/NConstraints</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Custom constraints for NUnit.</description>
 		<tags>nunit testing tdd unit-testing nunit-custom-constraints saturdaymp</tags>
