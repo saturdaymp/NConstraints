@@ -21,7 +21,7 @@ namespace TestClient
             var expected = new TestClass() {IntegerProperty = 1};
             var actual = new TestClass();
 
-            Assert.That(expected, NUnit.Framework.Is.Not.EquivalentPropertyWiseTo(actual));
+            Assert.That(expected, Is.Not.EquivalentPropertyWiseTo(actual));
         }
 
         /// <summary>
