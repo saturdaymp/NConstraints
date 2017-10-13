@@ -13,6 +13,6 @@
 		<tags>nunit testing tdd unit-testing nunit-custom-constraints saturdaymp</tags>
     </metadata>
     <files>
-		<file src="..\Source\SaturdayMP.NConstraints\bin\Release\netstandard1.6" target="lib\netstandard1.6" />
+		<file src="..\Source\SaturdayMP.NConstraints\bin\Release\netstandard1.6\SaturdayMP.NConstraints.dll" target="lib\netstandard1.6" />
     </files>
 </package>
