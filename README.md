@@ -36,6 +36,7 @@ using Is = SaturdayMP.NConstraints.Is;
 
 namespace MyTestNamespace
 {
+  [TestFixture]
   public class MyTests
   {
     [Test]
@@ -65,7 +66,7 @@ Finally some code analyizers, like [ReSharper](https://www.jetbrains.com/resharp
 This project adds the following constraints to NUnit:
 
 | Constraint Name | Description |
-|---:             |---:         |
+|:---             |:---         |
 | [EquivalentPropertyWiseTo](#equivalentpropertywiseto) | Asserts that the property values of expected object are the same on the actual object. |
 
 ##  EquivalentPropertyWiseTo
