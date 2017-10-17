@@ -99,7 +99,11 @@ public void PropertiesTheSame()
 ```
 
 # Contributing 
-If you have any questions, notice a bug, or have a suggestion/enhancment please let me know by opening a [issue](https://github.com/saturdaymp/NConstraints/issues).  Better yet create a [pull request](https://github.com/saturdaymp/NConstraints/pulls) with your fix.  Both are much appreciated.
+If you have any questions, notice a bug, or have a suggestion/enhancment please let me know by:
+
+- opening a [issue](https://github.com/saturdaymp/NConstraints/issues) or [pull request](https://github.com/saturdaymp/NConstraints/pulls).
+- asking a question on [StackOverflow](https://stackoverflow.com/) with the tag *nconstraints*.
+- send an e-mail to support@saturdaymp.com.
 
 # Acknowledgements
-Thanks to the [NUnit team](https://github.com/orgs/nunit/people) for creating NUnit and continuing to support it.
+Thanks to the [NUnit team](https://github.com/orgs/nunit/people) for creating NUnit and continuing to support it.  I’ve used NUnit for most of my career to properly test and improve my code.
