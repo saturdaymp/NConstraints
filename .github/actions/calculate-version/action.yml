@@ -1,0 +1,43 @@
+# Calculates the next version number.  Assumes
+# that the code has already been checked out and that
+# the fetch-depth is zero:
+#
+#  uses: actions/checkout@v3
+#  with:
+#    fetch-depth: 0
+#
+# More details: https://gitversion.net/docs/reference/requirements
+
+name: 'Calculate Version'
+description: 'Calculate the next version number using GitVersion.'
+
+outputs:
+  version_formats:
+    description: 'The various formats for the version.  See GitVersion for more details.'
+    value: ${{ steps.random-number-generator.outputs }}
+
+runs:
+  using: "composite"
+  steps:
+      - name: Install .NET Core 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.10.2
+        with:
+          versionSpec: '5.12.0'
+
+      - name: GitVersion Config
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+          useConfigFile: true
+          additionalArguments: '/showConfig'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        id: gitversion
+        with:
+          useConfigFile: true
+          additionalArguments: '/updateprojectfiles'
