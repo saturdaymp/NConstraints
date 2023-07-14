@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/calculate-version
 
       - name: Dispaly Updated Project File
-        run: cat SaturdayMP.NContraints/SaturdayMP.NConstraints.csproj
+        run: cat SaturdayMP.NConstraints/SaturdayMP.NConstraints.csproj
 
       - name: Run Tests
         run: dotnet test

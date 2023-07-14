@@ -24,7 +24,7 @@ branches:
     regex: ^master$|^main$
     mode: ContinuousDeployment
     tag: alpha
-    increment: Patch
+    increment: Minor
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     source-branches: [ ]
@@ -36,7 +36,7 @@ branches:
     regex: ^releases?[/-]
     mode: ContinuousDeployment
     tag: beta
-    increment: None
+    increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     source-branches: [ 'main' ]
