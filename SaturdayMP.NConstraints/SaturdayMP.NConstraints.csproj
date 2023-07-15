@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <Title>NConstraints</Title>
-    <Authors>Saturday Morning Productions</Authors>
+    <Authors>Saturday Morning Productions Inc.</Authors>
     <Description>Custom constraints for NUnit.</Description>
     <PackageProjectUrl>https://github.com/saturdaymp/NConstraints</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>

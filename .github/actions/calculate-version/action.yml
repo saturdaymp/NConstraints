@@ -13,8 +13,7 @@ description: 'Calculate the next version number using GitVersion.'
 
 outputs:
   version_formats:
-    description: 'The various formats for the version.  See GitVersion for more details.'
-    value: ${{ steps.gitversion.outputs }}
+    description: 'The various formats for the version are loaded into the environment (e.g. env.*).  See the GitVersion documentation for all the version formats available.'
 
 runs:
   using: "composite"
@@ -37,7 +36,6 @@ runs:
 
       - name: Determine Version
         uses: gittools/actions/gitversion/execute@v0.10.2
-        id: gitversion
         with:
           useConfigFile: true
           additionalArguments: '/updateprojectfiles'

@@ -32,11 +32,11 @@ jobs:
       - name: Upload NuGet Package to Action
         uses: actions/upload-artifact@v3
         with:
-          name: SaturdayMP.NConstraints.${{ steps.calculate_version.outputs.nugetversionv2 }}.nupkg
-          path: SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.calculate_version.outputs.nugetversionv2 }}.nupkg
+          name: SaturdayMP.NConstraints.${{ env.nugetversionv2 }}.nupkg
+          path: SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ env.nugetversionv2 }}.nupkg
           if-no-files-found: error
 
       - name: Upload to MyGet
-        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.calculate_version.outputs.nugetversionv2 }}.nupkg --source https://www.myget.org/F/saturdaymp/api/v3/index.json --api-key ${{ secrets.MYGET_API_KEY }}
+        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ env.nugetversionv2 }}.nupkg --source https://www.myget.org/F/saturdaymp/api/v3/index.json --api-key ${{ secrets.MYGET_API_KEY }}
 
       
