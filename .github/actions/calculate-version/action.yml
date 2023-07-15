@@ -18,10 +18,10 @@ outputs:
 runs:
   using: "composite"
   steps:
-      - name: Install .NET Core 6
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '6.0.x'
+      # - name: Install .NET Core 6
+      #   uses: actions/setup-dotnet@v3
+      #   with:
+      #     dotnet-version: '6.0.x'
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.10.2
