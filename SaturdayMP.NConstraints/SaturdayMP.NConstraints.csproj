@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/saturdaymp/NConstraints</RepositoryUrl>
     <PackageTags>nunit;testing;tdd;unit-testing;nunit-custom-constraints;saturdaymp</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
