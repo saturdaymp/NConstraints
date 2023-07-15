@@ -16,9 +16,23 @@ jobs:
         with:
           fetch-depth: 0 # required for GitVersion
 
-      - name: Calculate Version
-        id: calculate_version
-        uses: ./.github/actions/calculate-version
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.10.2
+        with:
+          versionSpec: '5.12.0'
+
+      - name: GitVersion Config
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+          useConfigFile: true
+          additionalArguments: '/showConfig'
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+          useConfigFile: true
+          additionalArguments: '/updateprojectfiles'
 
       - name: Dispaly Updated Project File
         run: cat SaturdayMP.NConstraints/SaturdayMP.NConstraints.csproj
@@ -32,11 +46,11 @@ jobs:
       - name: Upload NuGet Package to Action
         uses: actions/upload-artifact@v3
         with:
-          name: SaturdayMP.NConstraints.${{ env.nuGetVersionV2 }}.nupkg
-          path: SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ env.nuGetVersionV2 }}.nupkg
+          name: SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg
+          path: SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg
           if-no-files-found: error
 
       - name: Upload to MyGet
-        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ env.nuGetVersionV2 }}.nupkg --source https://www.myget.org/F/saturdaymp/api/v3/index.json --api-key ${{ secrets.MYGET_API_KEY }}
+        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --source https://www.myget.org/F/saturdaymp/api/v3/index.json --api-key ${{ secrets.MYGET_API_KEY }}
 
       
