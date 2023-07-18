@@ -1,5 +1,6 @@
 export:
   include-created-date-in-title: true
+  created-date-string-format: MMM, d, yyyy
 
 issue-labels-include:
   - bug
