@@ -1,0 +1,32 @@
+issue-labels-include:
+  - bug
+  - devops
+  - dependency
+  - documentation
+  - enhancement
+  - security
+
+issue-labels-alias:
+  - name: bug
+    header: Bug
+    plural: Bugs
+
+  - name: dependency
+    header: Dependency
+    plural: Dependencies
+
+  - name: devops
+    header: DevOps
+    plural: DevOps
+
+  - name: documentation
+    header: Documentation
+    plural: Documentation
+
+  - name: feature
+    header: Feature
+    plural: Feature
+
+  - name: security
+    header: Security
+    plural: Security
