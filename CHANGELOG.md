@@ -1,4 +1,4 @@
-## v1.1.0
+## v1.1.0 (07/18/2023 21:12:11 +00:00)
 
 
 As part of this release we had [3 issues](https://github.com/saturdaymp/NConstraints/milestone/1?closed=1) closed.
