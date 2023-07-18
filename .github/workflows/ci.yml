@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, release* ]
+    tags: [ v* ]
+  pull_request:
+    branches: [ main, release* ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # required for GitVersion
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.10.2
+        with:
+          versionSpec: '5.12.0'
+
+      - name: GitVersion Config
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+          useConfigFile: true
+          additionalArguments: '/showConfig'
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+          useConfigFile: true
+          additionalArguments: '/updateprojectfiles'
+
+      - name: Dispaly Updated Project File
+        run: cat SaturdayMP.NConstraints/SaturdayMP.NConstraints.csproj
+
+      - name: Run Tests
+        run: dotnet test
+
+      - name: Create NuGet Package
+        run: dotnet pack --configuration Release --output SaturdayMP.NConstraints/bin/Release
+
+      - name: Upload NuGet Package to Action
+        uses: actions/upload-artifact@v3
+        with:
+          name: SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg
+          path: SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg
+          if-no-files-found: error
+
+      - name: Upload to MyGet
+        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --source https://www.myget.org/F/saturdaymp/api/v3/index.json --api-key ${{ secrets.MYGET_API_KEY }}
+
+      # Only push tagged builds to NuGet.  These will be production or release candidates.
+      - name: Upload to NuGet
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+        run: dotnet nuget push SaturdayMP.NConstraints/bin/Release/SaturdayMP.NConstraints.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate --no-symbols -s https://api.nuget.org/v3/index.json
+      

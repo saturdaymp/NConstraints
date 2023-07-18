@@ -4,13 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <Title>NConstraints</Title>
-    <Authors>Saturday Morning Productions</Authors>
+    <Authors>Saturday Morning Productions Inc.</Authors>
     <Description>Custom constraints for NUnit.</Description>
     <PackageProjectUrl>https://github.com/saturdaymp/NConstraints</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/saturdaymp/NConstraints</RepositoryUrl>
     <PackageTags>nunit;testing;tdd;unit-testing;nunit-custom-constraints;saturdaymp</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
