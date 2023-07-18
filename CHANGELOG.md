@@ -1,4 +1,4 @@
-## v1.1.0 (07/18/2023 21:12:11 +00:00)
+## v1.1.0 (Jul, 18, 2023)
 
 
 As part of this release we had [3 issues](https://github.com/saturdaymp/NConstraints/milestone/1?closed=1) closed.
@@ -11,4 +11,6 @@ __DevOps__
 
 - [__#3__](https://github.com/saturdaymp/NConstraints/pull/3) Refactor project structure and file names
 - [__#4__](https://github.com/saturdaymp/NConstraints/pull/4) Create CI in GitHub Actions
+
+b Actions
 
