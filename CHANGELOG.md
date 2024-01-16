@@ -1,3 +1,14 @@
+## v1.2.0 (Jan, 16, 2024)
+
+
+As part of this release we had [1 issue](https://github.com/saturdaymp/NConstraints/milestone/3?closed=1) closed.
+
+
+
+__Documentation__
+
+- [__#9__](https://github.com/saturdaymp/NConstraints/pull/9) Added sponsorship badge to README
+
 ## v1.1.1 (Jul, 19, 2023)
 
 
