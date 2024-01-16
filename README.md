@@ -1,5 +1,8 @@
+[![GitHub release (with filter)](https://img.shields.io/github/v/release/saturdaymp/NConstraints?sort=semver&label=Latest%20Release&labelColor=3C444C&logoColor=959DA5&logo=GitHub)](https://github.com/saturdaymp/XPlugins.iOS.BEMCheckBox/releases/latest)
+[![Nuget](https://img.shields.io/nuget/dt/SaturdayMP.NConstraints?logo=nuget&label=Downloads&labelColor=3C444C&logoColor=959DA5)](https://www.nuget.org/packages/SaturdayMP.NConstraints)
 ![CI/CD](https://github.com/saturdaymp/NConstraints/actions/workflows/ci.yml/badge.svg)
 ![Release Notes](https://github.com/saturdaymp/NConstraints/actions/workflows/release-notes.yml/badge.svg)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/saturdaymp?label=Sponsors&logo=githubsponsors&labelColor=3C444C)](https://github.com/sponsors/saturdaymp)
 
 # NConstraints
 Adds additional [constraints](https://github.com/nunit/docs/wiki/Constraints) to [NUnit](https://github.com/nunit/nunit) such as comparing the properties of two objects.
